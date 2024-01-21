@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Services</title>
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/responsive.css">
+    <script src="scripts/imports.js"></script>
+
+</head>
+<body>
+    <nav>
+        <div class="mainNav"></div>
+        <button class="openbtn" onclick="openNav()">&#9776;</button>
+        <div id="mobileNav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href="index.html">Home</a>
+            <a href="services.html">Services</a>
+            <a href="about.html">About</a>
+            <a href="costestimator.html">Cost Estimator</a>
+            <a href="contact.html">Contact</a>
+        </div>
+        <script>
+            function openNav() {
+                document.body.style.overflow = "hidden";
+                document.getElementById("mobileNav").style.width = "100%";
+            }
+            function closeNav() {
+                document.body.style.overflow = "auto";
+                document.getElementById("mobileNav").style.width = "0";
+            }
+        </script>
+    </nav> 
+    <section class="contentStart" id="servicesSection" onclick="closeForm()">
+        <h1>Web Services to Meet Your Needs</h1>
+        <p>Revamp your online presence with our web design agency! Our team of experts offers top-notch web design services to help you stand out from the crowd. From stunning website designs to e-commerce solutions, we have got you covered. Experience seamless website navigation, optimized for both desktop and mobile devices. Our services include responsive website design, custom web development, website maintenance, and much more. Let us help you build an online brand that your customers will love.</p>
+        <div id="serviceOptions">
+            <!-- The Service options are added from an array. -->
+        </div>
+        <script src="scripts/servicesArray.js"></script>
+        <p>Whether you need a simple brochure website or a complex e-commerce platform, we have the expertise to deliver high-quality web solutions that meet your specific requirements. We use the latest web technologies and best practices to ensure that your website is fast, secure, and optimized for search engines.</p>
+        <p>Check out our <a href="costestimator.html">Cost Estimator</a> to pick and choose the services your business needs and get a rough quote.</p>
+    </section>
+    <div id="addLoginForm"></div>
+    <script>
+        function openForm() {
+            document.getElementById("myForm").style.display = "block";
+            }
+        function closeForm() {
+            document.getElementById("myForm").style.display = "none";
+            }
+    </script>
+    <footer id="addFooter">
+        <!-- The Footer is added with JavaScript! -->
+    </footer>
+</body>
+</html>

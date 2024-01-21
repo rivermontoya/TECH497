@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Welcome Page</title>
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/responsive.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <link rel="stylesheet" href="scripts/animateChars/jquery.serialeffect.css" />
+    <script src="scripts/animateChars/jquery.slim.min.js"></script>
+    <script src="scripts/animateChars/jquery.serialeffect.min.js"></script>
+    <script src="scripts/imports.js"></script>
+    <script src="scripts/reveal.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body class="payPage">
+    <nav id="mainNav">
+        <!-- The Menu is added with JavaScript! -->
+    </nav>
+    <section class="contentStart" id="paySection">
+        <form>
+            <h3>Billing Address</h3>
+            <label>Full Name</label>
+            <input>
+            <label>Email</label>
+            <input>
+            <label>Address</label>
+            <input>
+            <label>City</label>
+            <input>
+            <label>State</label>
+            <input>
+            <label>Zip</label>
+            <input>
+            <h3>Payment</h3>
+            <label>Accepted Cards</label>
+            <div>
+                <i class="fa fa-cc-visa" style="color:navy;"></i>
+                <i class="fa fa-cc-amex" style="color:blue;"></i>
+                <i class="fa fa-cc-mastercard" style="color:red;"></i>
+                <i class="fa fa-cc-discover" style="color:orange;"></i>
+            </div>
+            <label>Name on Card</label>
+            <input>
+            <label>Credit card number</label>
+            <input>
+            <label>Exp Month</label>
+            <input>
+            <label>Exp Year</label>
+            <input>
+            <label>CVV</label>
+            <input>
+            <label>
+                <input type="checkbox" checked="checked"> Shipping address same as billing
+            </label>
+            <input type="submit" value="Checkout">
+        </form>
+    </section>
+
+    <div id="addLoginForm"></div>
+    <script>
+        function openForm() {
+            document.getElementById("myForm").style.display = "block";
+        }
+        function closeForm() {
+            document.getElementById("myForm").style.display = "none";
+        }
+    </script>
+
+    <footer id="addFooter">
+        <!-- The Footer is added with JavaScript! -->
+    </footer>
+</body>
+</html>

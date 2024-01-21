@@ -1,0 +1,65 @@
+/* MEDIA QUERY FORMAT*/
+@media only screen and (max-width:800px) {
+    section {
+        width: 95%;
+    }
+    
+}
+@media only screen and (max-width: 700px) {
+    footer p:not(:first-of-type) {
+        display: none;
+    }
+    #serviceOptions > div {
+        display: block;
+    }
+    #serviceOptions > div > span {
+        display: inline-block;
+        height: 30px;
+    }
+}
+@media only screen and (max-width: 845px) {
+    .scrollToTop {
+        padding: 25px 5px;
+    }
+}
+
+@media only screen and (max-width: 660px) {
+    nav .mainNav {
+        display: none;
+    }
+    .openbtn {
+        display: block;
+    }
+    #contactSection {
+        width: 90%;
+        padding: 0 5%;
+    }
+}
+
+/*Animation transition*/
+.contentStart {
+    animation: transitionIn 0.75s;
+}
+/*Scrollable reveal section*/
+.reveal {
+    position: relative;
+    transform: translateX(-350px);
+    opacity: 0;
+    transition: 1s all ease;
+}
+.reveal.active {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+/*Scrollable reveal section end*/
+@keyframes transitionIn {
+    from {
+        opacity: 0;
+        transform: rotateX(-5deg);
+    }
+    to {
+        opacity: 1;
+        transform: rotateX(0);
+    }
+}

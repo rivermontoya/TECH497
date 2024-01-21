@@ -1,0 +1,377 @@
+/* reset styles */
+/*
+html {
+	font-size: 18px;
+}
+a, article, body, div, fieldset, figcaption, figure, footer, form, header, h1, 
+h2, h3, img, input, label, legend, li, nav, p, section, textarea, ul {
+	border: 0;
+	padding: 0;
+	margin: 0;
+}
+*/
+html, body {
+    margin: 0;
+}
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    background-color: aliceblue;
+}
+
+
+nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    background-color: #222222;
+    padding: 0 10%;
+}
+nav .mainNav {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    width: 100%;
+}
+#topNavBarLink {
+    padding-top: 20px;
+}
+nav a {
+    text-decoration: none;
+    color: white;
+    padding: 10px 12px;
+}
+nav a:hover {
+    background-color: #444444;
+}
+.topnav-right {
+    margin-left: auto;
+    /*padding-bottom: 2px;
+    border-bottom-style: solid;
+    border-bottom-width: 2px;*/
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+.topnav-right:hover {
+    cursor: pointer;
+}
+.openbtn {
+    font-size: 20px;
+    cursor: pointer;
+    background-color: #222222;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    display: none;
+    margin-left: auto;
+}
+#mobileNav {
+    height: 100vh;
+    width: 0;
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    left: 0;
+    background-color: #222222;
+    color: white;
+    overflow-x: hidden;
+    transition: 0.5s;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+#mobileNav a {
+    font-size: 18pt;
+    padding: 16px 0;
+}
+#mobileNav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 10%;
+    font-size: 36px;
+    padding: 10px 0;
+}
+/* The login popup form - hidden by default */
+.form-popup {
+    display: none;
+    position: fixed;
+    top: 8%;
+    right: 5%;
+    z-index: 9;
+}
+/* Full-width input fields */
+.form-container input[type=text], .form-container input[type=password] {
+    width: auto;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background: #f1f1f1;
+}
+/* When the inputs get focus, do something */
+.form-container input[type=text]:focus, .form-container input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+}
+
+/* Set a style for the submit/login button */
+.form-container .btn {
+    background-color: #04AA6D;
+    color: white;
+    padding: 16px 20px;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    margin-bottom: 10px;
+    opacity: 0.8;
+}
+
+/* Add a red background color to the cancel button */
+.form-container .cancel {
+    background-color: red;
+}
+
+/* Add some hover effects to buttons */
+.form-container .btn:hover, .open-button:hover {
+    opacity: 1;
+}
+
+section {
+    flex: 1;
+    width: 80%;
+    margin: auto;
+}
+#homeSection, #loggedInSection {
+    flex: 1;
+    width: 100%;
+    flex-direction: column;
+    /*Cant center the homebox without webkit????*/
+    text-align: -webkit-center;
+}
+#contactSection, #servicesSection, #aboutSection, #loggedInSection, #paySection{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#headHomeLogo {
+    max-height: 40px;
+    
+}
+footer {
+    background-color: #222222;
+    color: white;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    /*this center css was generated with: http://howtocenterincss.com/#contentType=text&horizontal=center&vertical=middle and was greatly appreciated.*/
+}
+footer img {
+    padding: 5px;
+    max-height: 40px;
+}
+footer a {
+    color: white;
+    text-decoration: none;
+}
+footer p#footDetails {
+    padding: 0 50px;
+}
+form {
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid white;
+    border-radius: 15px;
+    padding: 10px;
+    max-width: 600px;
+    margin: auto;
+}
+form#costEstimator {
+    margin: 15px 15px -10px 15px;
+    box-shadow: 0 4px 4px 0 rgba(0,0,0,.251);
+}
+form label {
+    color: black;
+    padding-bottom: 5px;
+}
+input, textarea, select {
+    padding: 5px;
+    margin-bottom: 15px;
+}
+input[type=submit], button#submitBtn {
+    background-color: #222222;
+    border: none;
+    color: white;
+    width: 100px;
+    margin-bottom: 0;
+    border-radius: 5px;
+}
+button#submitBtn {
+    margin-bottom: 30px;
+}
+input[type=submit]:hover, button#submitBtn:hover {
+    background-color: #444444;
+    cursor: pointer;
+}
+textarea {
+    resize: none;
+    height: 150px;
+}
+h1, h2, h3, span {
+    font-family: Helvetica;
+}
+h1 {
+    font-size: 20pt;
+}
+h2, span {
+    font-size: 18pt;
+}
+h3 {
+    font-size: 16pt;
+}
+p, a {
+    font-size: 14pt;
+    font-family: "Trebuchet MS";
+}
+label, input, textarea, button {
+    font-size: 12pt;
+    font-family: "Trebuchet MS";
+}
+table {
+    border: 1px solid black;
+    font-size: 14pt;
+    border-collapse: collapse;
+    font-family: "Trebuchet MS";
+}
+th, td {
+    border: 1px solid black;
+    padding: 5px 5px;
+}
+.centerText {
+    text-align: center;
+}
+#serviceOptions {
+    color: white;
+    padding: 5px;
+    text-align: center;
+}
+#serviceOptions>div {
+    display: inline-block;
+    box-sizing: border-box;
+    position: relative;
+    margin: 15px 20px;
+    border-radius: 15px;
+    background-color: rgb(61, 73, 139);
+    box-shadow: 0 0 10px rgb(61, 73, 139), 0 0 25px rgb(61, 73, 139);
+}
+#serviceOptions>div :hover {
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgb(61, 73, 139),
+    0 0 25px rgb(61, 73, 139);
+}
+#serviceOptions>div>span {
+    display: flex;
+    align-items: center;
+    height: 50px;
+    padding: 10px 15px;
+}
+#contactTop {
+    width: 100%;
+}
+#contactBottom {
+    color: white;
+    border: 2px solid white;
+    border-radius: 15px;
+    padding: 10px;
+    margin: 25px 0;
+    width: calc(100% - 20px);
+    max-width: 600px;
+    text-align: center;
+    transition-duration: 1s;
+}
+#errors {
+    display: none;
+}
+/*homepage pane*/
+.landscape {
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    color: white;
+}
+.landscape img{
+    height: 100vh;
+    width: 100%;
+    object-fit: cover;
+}
+.landscape div {
+    box-shadow: 0 4px 4px 0 rgba(0,0,0,.251);
+}
+/*homepage text sections*/
+.section1 {
+    position:relative;
+    top:-100vh;
+}
+/*.section2 {
+    background-color:gray;
+}*/
+/*homepage transparent div(s)*/
+.homeBox {
+    background-color: rgba(0,0,0,.5);
+    display: flex;
+    flex-direction: column;
+    border: 2px solid #222222;
+    border-radius: 15px;
+    max-width: 600px;
+    margin: 10%;
+    padding: 30px;
+}
+/*contact page firefly display*/
+.firefly {
+    display: none;
+    height: 4px;
+    width: 4px;
+    border-radius: 2px;
+    position: absolute;
+    background-color: rgb(128,128,128);
+}
+
+#contactSection {
+    width: 100%;
+    position: relative;
+    overflow: hidden;
+    background-color: #111111;
+}
+#contactSection h1 {
+    color: white;
+}
+#contactForm {
+    position: relative;
+    z-index: 5;
+}
+
+/*index page scroll to top CSS*/
+.scrollToTop {
+    margin: 0 30px 15px 0;
+    text-align: center;
+    text-decoration: none;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    display: none;
+}
+.scrollToTop img {
+    padding: 5px;
+    background-color: #333333;
+    border-radius: 3em;
+    max-width: 2em;
+    max-height: 2em;
+}
+
+.scrollToTop:hover {
+    text-decoration: none;
+}
+#hljs-tag, .emgithub-file, .code-area td.hljs-ln-line {
+    font-size: 18pt !important;
+}
