@@ -1,0 +1,6 @@
+/* JavaScript: serialeffect */
+.js-serialeffect{display:inline-block;transition:transform 300ms;transition-timing-function:cubic-bezier(0, 0.6, 0.6, 1);will-change:transform;}
+.js-serialeffect.is-word{white-space:nowrap;}
+.js-serialeffect.is-letter{}
+.js-serialeffect.is-visual{}
+.js-serialeffect-compounded{display:inline-block;white-space:nowrap;}

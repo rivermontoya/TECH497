@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Home</title>
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/responsive.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <link rel="stylesheet" href="scripts/animateChars/jquery.serialeffect.css" />
+    <script src="scripts/animateChars/jquery.slim.min.js" async></script>
+    <script src="scripts/animateChars/jquery.serialeffect.min.js" async></script>
+    <script src="scripts/imports.js" async></script>
+    <script src="scripts/reveal.js" async></script>
+</head>
+<body>
+    <nav>
+        <div class="mainNav"></div>
+        <button class="openbtn" onclick="openNav()">&#9776;</button>
+        <div id="mobileNav">
+            <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+            <a href="index.html">Home</a>
+            <a href="services.html">Services</a>
+            <a href="about.html">About</a>
+            <a href="costestimator.html">Cost Estimator</a>
+            <a href="contact.html">Contact</a>
+        </div>
+        <script>
+            function openNav() {
+                document.body.style.overflow = "hidden";
+                document.getElementById("mobileNav").style.width = "100%";
+            }
+            function closeNav() {
+                document.body.style.overflow = "auto";
+                document.getElementById("mobileNav").style.width = "0";
+            }
+        </script>
+    </nav>
+    <section id="homeSection" class="contentStart" onclick="closeForm()">
+        <!------LandscapeDivs------>
+        <!------------Landscape class divs resize to fit viewport------------1stPane------------>
+        <div class="landscape">
+
+            <!-- <picture> uses two images to display the page for different screen sizes, the gradient is done differently on each images -->
+            <picture>
+                <source media="(min-width: 900px)" srcset="images/HomePageCoverMountainsLarge.jpg"> <!-- Changed .png back to .jpg -->
+                <source media="(min-width: 0px)" srcset="images/HomePageCoverMountains.jpg"> <!-- Changed .png back to .jpg -->
+                <img src="HomePageCoverMountains.jpg" alt="IfItDoesntMatchAnyMedia"> <!-- Changed .png back to .jpg -->
+            </picture>
+            <!-- This div is the transparent box container on top of the picture -->
+            <div class="homeBox section1">
+                <h1>Web Devs</h1>
+                <h2>Welcome to our web development website, where we create stunning, responsive, and user-friendly websites that are tailored to your unique needs!</h2>
+            </div>
+        </div>
+        <!---------End1stPane--------->
+        <!-----plan to animate this as a slideshow that flips through automatically ---2ndPane----->
+        <div class="landscape">
+            <!--This was also section2-->
+            <!-- homeBox&text-container class are in main.css
+            reveal class is in responsive.css-->
+            <div class="homeBox text-container reveal">
+                <h2>We're more than a team.</h2>
+                <p>
+                    Our team of experienced web developers, designers, and project managers are dedicated to providing you with the best possible service,
+                    from the initial consultation all the way through to the launch of your website. We understand that every business has different requirements
+                    and we work closely with our clients to ensure we deliver a website that perfectly reflects their brand, values, and goals.
+                </p>
+            </div>
+        </div>
+        <div class="landscape" style="background-color: #c5d8e9">
+            <div class="homeBox text-container reveal">
+                <h2>Services Offered</h2>
+                <ul style="text-align:left; font-size: 14pt; font-family:'Trebuchet MS'">
+                    <li>Responsive Design</li>
+                    <li>UI Design</li>
+                    <li>eCommerce</li>
+                    <li>Layout Design</li>
+                    <li>Hosting Solutions</li>
+                    <li>Testing</li>
+                    <li>Quality Assurance</li>
+                </ul>
+            </div>
+            <p style="color:black">Want to view some of our code, straight from GitHub?</p>
+            <button onclick="toggleDiv()">View home page code</button>
+
+        </div>
+
+
+        <!---EndLandscapeDivs--->
+    </section>
+    <div id="codeDiv" style="display:none;">
+        <script src="https://emgithub.com/embed-v2.js?target=https%3A%2F%2Fgithub.com%2Frivermontoya%2FSchoolWebsite%2Fblob%2Fmain%2Fpublic%2Findex.html&style=vs&type=code&showFullPath=on"></script>
+    </div>
+    <a href="#top" class="scrollToTop"><img src="images/backtotoparrows.png" alt="Scroll to the Top"></a>
+
+    <footer id="addFooter">
+        <!-- The Footer is added with JavaScript! -->
+    </footer>
+    <!-- Scroll to top function -->
+    <script>
+        jQuery(document).ready(function ($) {
+
+            var visible = false;
+            //Check to see if the window is top if not then display button
+            $(window).scroll(function () {
+                var scrollTop = $(this).scrollTop();
+                if (!visible && scrollTop > 100) {
+                    $(".scrollToTop").fadeIn();
+                    visible = true;
+                } else if (visible && scrollTop <= 100) {
+                    $(".scrollToTop").fadeOut();
+                    visible = false;
+                }
+            });
+
+            //Click event to scroll to top
+            $(".scrollToTop").click(function () {
+                $("html, body").animate({
+                    scrollTop: 0
+                }, 800);
+                return false;
+            });
+
+        });
+    </script>
+    <!-- animateChars -->
+    <script>
+        $(document).ready(function () {
+            // jquery.serialeffect initialisation
+            $.serialeffect({
+                elementsSelector: 'h2',
+            });
+        });
+    </script>
+    <div id="addLoginForm"></div>
+    <script>
+        function openForm() {
+            document.getElementById("myForm").style.display = "block";
+        }
+        function closeForm() {
+            document.getElementById("myForm").style.display = "none";
+        }
+    </script>
+    <!--Open div button. Contains source code for the page-->
+    <script>
+        function toggleDiv() {
+            var div = document.getElementById("codeDiv");
+            if (div.style.display === "none") {
+                div.style.display = "block";
+            } else {
+                div.style.display = "none";
+            }
+        }
+    </script>
+</body>
+</html>

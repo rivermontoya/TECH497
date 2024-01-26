@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Welcome Page</title>
+    <link rel="icon" type="image/svg+xml" href="images/favicon.svg" />
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="styles/responsive.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+    <link rel="stylesheet" href="scripts/animateChars/jquery.serialeffect.css" />
+    <script src="scripts/animateChars/jquery.slim.min.js"></script>
+    <script src="scripts/animateChars/jquery.serialeffect.min.js"></script>
+    <script src="scripts/imports.js"></script>
+    <script src="scripts/reveal.js"></script>
+</head>
+<body class="loggedInPage">
+    <nav id="mainNav">
+        <!-- The Menu is added with JavaScript! -->
+    </nav>
+
+    <section class="contentStart" id="loggedInSection">
+        <h1 id="name">Hello </h1>
+        
+        <div class="landscape">
+            <div class="homeBox text-container">
+                <h2 id="websiteName">Your New Website</h2>
+                <p id="dateCreated">Date Created: </p>
+                <p id="monthlyPay">Monthly Payment: $</p>
+                <p>Payment Due: 3rd of each month</p>
+                <p>Make a payment: <a href="pay.html">Pay Now</a></p>
+                <p>Request a change by scheduling an appointment</p>
+                <form action="#" onsubmit="event.preventDefault(); submitForm()">
+                    <label for="appointment">Appointment On:</label>
+                    <input type="date" id="appointment" name="appointment">
+                    <input type="submit" name="Submit" value="Submit">
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer id="addFooter">
+        <!-- The Footer is added with JavaScript! -->
+    </footer>
+    <script>
+        let emailName = window.location.search.split("&").join("=").split("=");
+        emailName = decodeURIComponent(emailName[1]);
+        if (emailName == "NaN") {
+            document.getElementById("name").innerHTML += "there!";
+        } else {
+            document.getElementById("websiteName").innerHTML = emailName + "'s Custom Website";
+            document.getElementById("name").innerHTML += emailName;
+        }
+        //Code for date Submission change:
+        var td = new Date();
+        //set monthly payment to default:
+        var monPay = 200;
+        document.getElementById("monthlyPay").innerHTML += monPay;
+
+        document.getElementById("dateCreated").innerHTML += td.toLocaleDateString();
+        function submitForm() {
+            const appointmentDate = document.getElementById('appointment').value;
+            const queryParams = new URLSearchParams(window.location.search);
+            queryParams.set('appointment', appointmentDate);
+            const queryString = queryParams.toString();
+            const currentUrl = window.location.href.split('?')[0];
+            const redirectUrl = `${currentUrl}?${queryString}`;
+            alert("Appointment made for: " + appointmentDate);
+            window.location.href = redirectUrl;
+        }
+    </script>
+</body>
+</html>
