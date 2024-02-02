@@ -58,9 +58,14 @@
         <!-----plan to animate this as a slideshow that flips through automatically ---2ndPane----->
         <div class="landscape">
             <!--This was also section2-->
-            <!-- homeBox&text-container class are in main.css
-            reveal class is in responsive.css-->
-            <div class="homeBox text-container reveal">
+            <!-- homeBox is in main.css
+    reveal class is in responsive.css-->
+            <picture>
+                <source media="(min-width: 900px)" srcset="images/HomePageCoverMountainsLarge2.jpg">
+                <source media="(min-width: 0px)" srcset="images/HomePageCoverMountains2.jpg">
+                <img src="HomePageCoverMountains2.jpg" alt="IfItDoesntMatchAnyMedia">
+            </picture>
+            <div class="homeBox reveal section1">
                 <h2>We're more than a team.</h2>
                 <p>
                     Our team of experienced web developers, designers, and project managers are dedicated to providing you with the best possible service,
@@ -69,8 +74,14 @@
                 </p>
             </div>
         </div>
+        <!---------End2ndtPane--------->
         <div class="landscape" style="background-color: #c5d8e9">
-            <div class="homeBox text-container reveal">
+            <picture>
+                <source media="(min-width: 900px)" srcset="images/HomePageCoverMountainsLarge3.jpg">
+                <source media="(min-width: 0px)" srcset="images/HomePageCoverMountains3.jpg">
+                <img src="HomePageCoverMountains2.jpg" alt="IfItDoesntMatchAnyMedia">
+            </picture>
+            <div class="homeBox reveal section1">
                 <h2>Services Offered</h2>
                 <ul style="text-align:left; font-size: 14pt; font-family:'Trebuchet MS'">
                     <li>Responsive Design</li>
@@ -82,9 +93,6 @@
                     <li>Quality Assurance</li>
                 </ul>
             </div>
-            <p style="color:black">Want to view some of our code, straight from GitHub?</p>
-            <button onclick="toggleDiv()">View home page code</button>
-
         </div>
 
 
@@ -141,17 +149,6 @@
         }
         function closeForm() {
             document.getElementById("myForm").style.display = "none";
-        }
-    </script>
-    <!--Open div button. Contains source code for the page-->
-    <script>
-        function toggleDiv() {
-            var div = document.getElementById("codeDiv");
-            if (div.style.display === "none") {
-                div.style.display = "block";
-            } else {
-                div.style.display = "none";
-            }
         }
     </script>
 </body>

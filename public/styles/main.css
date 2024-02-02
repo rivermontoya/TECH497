@@ -313,9 +313,10 @@ th, td {
     position:relative;
     top:-100vh;
 }
-/*.section2 {
-    background-color:gray;
-}*/
+.section2 {
+    position: relative;
+    top: -100vh;
+}
 /*homepage transparent div(s)*/
 .homeBox {
     background-color: rgba(0,0,0,.5);
