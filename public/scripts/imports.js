@@ -13,7 +13,7 @@ window.onload = function loadMenu() {
         var Menu = document.getElementsByClassName("mainNav")[0];
     }
     //add all links to site as needed
-    Menu.innerHTML = "<a href=\"index.html\"><img id=\"headHomeLogo\" src=\"images/favicon.ico\" alt=\"TempleStorm Home Page header Favicon\"></a>";
+    Menu.innerHTML = "<a href=\"home.html\"><img id=\"headHomeLogo\" src=\"images/favicon.ico\" alt=\"TempleStorm Home Page header Favicon\"></a>";
     Menu.innerHTML += "<a id=\"topNavBarLink\" href=\"services.html\">Services</a>";
     Menu.innerHTML += "<a id=\"topNavBarLink\" href=\"about.html\">About</a>";
     Menu.innerHTML += "<a id=\"topNavBarLink\" href=\"costestimator.html\">Cost Estimator</a>";
@@ -44,8 +44,8 @@ window.onload = function loadMenu() {
     //working on centering footer better... styled with footer img
     //in main.css
     Footer.innerHTML = "<p>Copyright " + currentYear + " </p>";
-    Footer.innerHTML += "<a href=\"index.html\"><img src=\"images/favicon.ico\" alt=\"TempleStorm Home Page footer favicon\"></a>";
-    Footer.innerHTML += "<p><a href=\"index.html\">TempleStorm</a></p>";
+    Footer.innerHTML += "<a href=\"home.html\"><img src=\"images/favicon.ico\" alt=\"TempleStorm Home Page footer favicon\"></a>";
+    Footer.innerHTML += "<p><a href=\"home.html\">TempleStorm</a></p>";
     Footer.innerHTML += "<p id=\"footDetails\"><a href=\"about.html\">Developed by Team 2 (TempleStorm)</a></p>";
     Footer.innerHTML += "<p><a href=\"contact.html\">Send us an Email</a></p>";
     Footer.innerHTML += "<p><a href=\"ada.html\" style=\"padding-left:50px\">ADA</a></p>";
